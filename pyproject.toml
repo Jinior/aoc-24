@@ -7,7 +7,9 @@ authors = [
     { name = "Ewoud Samuels", email = "jinior@live.nl" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "pytest>=8.3.4",
+]
 
 [project.scripts]
 py-aoc-24 = "aoc_24:main"
