@@ -1,5 +1,7 @@
 import heapq
 
+from collections import defaultdict
+
 from aoc_24.utils import get_day_input
 
 
@@ -30,13 +32,22 @@ def part1(input) -> str:
 
 
 def part2(input) -> str:
-    return ""
+    list1, list2 = _parse_input(input)
+
+    count = defaultdict(int)
+    for number in list2:
+        count[number] += 1
+
+    result = 0
+    for number in list1:
+        result += number * count[number]
+    return str(result)
 
 
 def main() -> None:
     print("Day 1")
-    print(f"Solution to part 1: {part1(get_day_input(1, 1))}")
-    # print(f"Solution to part 2: {part1(get_day_input(1, 2))}")
+    print(f"Solution to part 1: {part1(get_day_input(1))}")
+    print(f"Solution to part 2: {part2(get_day_input(1))}")
 
 
 if __name__ == "__main__":
